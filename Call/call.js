@@ -30,3 +30,15 @@ function chicken(name, weight, legs) {
 const khoipham = new chicken('Khoi', 75, 2)
 console.log(khoipham)
 
+function employees(name, address) {
+    this.name = name,
+    this.address = address
+}
+
+function CTO(name, address, salary) {
+    employees.call(this, name, address)
+    this.salary = salary
+}
+
+const Khoi = new CTO('Khôi', '312', 1000000)
+console.log(Khoi)

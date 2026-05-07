@@ -20,3 +20,13 @@ const doctor = {
 
 const buttonClick = document.querySelector('#click')
 buttonClick.onclick = doctor.getInfo.bind(doctor)
+
+const employees = {
+    name : "Khôi",
+    address : "312",
+    getInfoEmployee() {
+        console.log(`${this.name} ${this.address}`)
+    }
+}
+const employeeClick = document.querySelector('#employee')
+employeeClick.onclick = employees.getInfoEmployee.bind(employees)
