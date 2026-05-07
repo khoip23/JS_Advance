@@ -11,6 +11,9 @@ function reducer(state = initState, action) {
         case 'WITHDRAW':
             return state - action.payload;
             break;
+        case 'RESET':
+            return state - state;
+            break;
         default:
             return state;
     }
@@ -32,9 +35,16 @@ function actionWithdraw(payload) {
     }
 }
 
+function actionReset(){
+    return{
+        type: 'RESET',
+    }
+}
+
 //dom event
 const deposit = document.querySelector('#deposit')
 const withdraw = document.querySelector('#withdraw')
+const reset = document.querySelector('#reset')
 
 //even handler
 deposit.onclick = function() {
@@ -43,6 +53,10 @@ deposit.onclick = function() {
 
 withdraw.onclick = function() {
     store.dispatch(actionWithdraw(10))
+}
+
+reset.onclick = function() {
+    store.dispatch(actionReset())
 }
 
 //Listener
